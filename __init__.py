@@ -7,11 +7,9 @@ from mfrc522 import SimpleMFRC522
 reader = SimpleMFRC522()
 
 
-
-class login(MycroftSkill):
+class RfidWriter(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
-
 
     @intent_handler(IntentBuilder("").require("querry"))
     def handle_login(self):
@@ -28,4 +26,4 @@ class login(MycroftSkill):
 
 
 def create_skill():
-    return login()
+    return RfidWriter()
