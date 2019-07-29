@@ -13,9 +13,8 @@ class RfidWriter(MycroftSkill):
 
     @intent_file_handler('query.intent')
     def handle_login(self):
-        info = []
-        text = self.get_response('what\'s the full name of the employee')
         try:
+            text = self.get_response('what\'s the full name of the employee')
             self.speak("Now place your tag on the reader to write the information you added")
             reader.write(text)
             self.speak_dialog("writing.successful", data={'name': text})
