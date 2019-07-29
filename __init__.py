@@ -15,7 +15,7 @@ class RfidWriter(MycroftSkill):
     def handle_login(self):
         try:
             test = self.get_response('what\'s the full name of the employee')
-            t = "Ahmed FOURATTI"
+            t = "Ahmed Fouratti"
             self.speak("Now place your tag on the reader to write the information you added")
             reader.write(t)
             self.speak_dialog("writing.successful", data={'name': t})
