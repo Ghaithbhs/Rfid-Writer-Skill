@@ -11,16 +11,16 @@ class RfidWriter(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
 
-    @intent_handler(IntentBuilder("").require("querry"))
+    @intent_file_handler('CreateEvent.intent')
     def handle_login(self):
-        name = self.settings.get("name")
-        family_name = self.settings.get("fname")
-        email = self.settings.get("email")
-        num = self.settings.get("num")
+        name = self.get_response('what\'s the name of the employee')
+        family_name = self.get_response('what\'s the family name of the employee')
+        email = self.get_response('what\'s the email of the employee')
+        job = self.get_response('what\'s the job title of the employee')
         try:
-            print("Now place your tag to write")
-            reader.write(name, family_name, email, num)
-            print("Written")
+            self.speak("Now place your tag on the reader to write the information you added")
+            reader.write(name, family_name, email, job)
+            self.speak_dialog("writing.successful", data={'name': name})
         finally:
             GPIO.cleanup()
 

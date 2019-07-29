@@ -8,39 +8,7 @@
                     {
                         "type": "label",
                         "label": "This skill allows the admin to add employees to the the table of employees, just fill the following form, save it, reboot the system and finally trigger the skill"
-                    },
-                    {
-                "name": "Full Name",
-                "fields": [
-                    {
-                        "name": "name",
-                        "type": "text",
-                        "label": "Name",
-                        "value": ""
-                    },
-                    {
-                        "name": "fname",
-                        "type": "text",
-                        "label": "Family Name",
-                        "value": ""
-                    },
-                   {
-                "name": "Contact",
-                "fields": [
-                    {
-                        "name": "email",
-                        "type": "text",
-                        "label": "Email",
-                        "value": ""
-                    },
-                    {
-                        "name": "num",
-                        "type": "text",
-                        "label": "Phone number",
-                        "value": ""
                     }
-                ]
-            }
                 ]
             }
 
