@@ -15,10 +15,9 @@ class RfidWriter(MycroftSkill):
     def handle_login(self):
         info = []
         text = self.get_response('what\'s the full name of the employee')
-        info.append(text)
         try:
             self.speak("Now place your tag on the reader to write the information you added")
-            reader.write(info)
+            reader.write(text)
             self.speak_dialog("writing.successful", data={'name': text})
         finally:
             GPIO.cleanup()
