@@ -11,7 +11,7 @@ class RfidWriter(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
 
-    @intent_file_handler('CreateEvent.intent')
+    @intent_file_handler('query.intent')
     def handle_login(self):
         name = self.get_response('what\'s the name of the employee')
         family_name = self.get_response('what\'s the family name of the employee')
