@@ -14,14 +14,12 @@ class RfidWriter(MycroftSkill):
     @intent_file_handler('query.intent')
     def handle_login(self):
         info = []
-        fullname = self.get_response('what\'s the full name of the employee')
-        info.append(fullname)
-        job = self.get_response('what\'s the job title of the employee')
-        info.append(job)
+        text = self.get_response('what\'s the full name of the employee')
+        info.append(text)
         try:
             self.speak("Now place your tag on the reader to write the information you added")
             reader.write(info)
-            self.speak_dialog("writing.successful", data={'name': fullname})
+            self.speak_dialog("writing.successful", data={'name': text})
         finally:
             GPIO.cleanup()
 
